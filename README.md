@@ -31,6 +31,14 @@ make indiana-jones-atlantis.rpm
 sudo dnf install ./RPMS/**/indiana-jones-atlantis-*.rpm
 ```
 
+## Indiana Jones and the Last Crusade
+- [GOG](https://www.gog.com/en/game/indiana_jones_and_the_last_crusade)
+- [SPEC](./SPECS/indiana-jones-last-crusade.spec)
+```bash
+make indiana-jones-last-crusade.rpm
+sudo dnf install ./RPMS/**/indiana-jones-last-crusade-*.rpm
+```
+
 ## The Shivah
 - [GOG](https://www.gog.com/en/game/the_shivah)
 - [SPEC](./SPECS/shivah.spec)
