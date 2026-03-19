@@ -1,13 +1,12 @@
+SPECTOOL_MACROS = -d "_topdir ${CURDIR}"
+RPMBUILD_MACROS = -D "_topdir ${CURDIR}" \
+				  -D "sourceserver ${SOURCE_SERVER}"
 
-diablo-hellfire:
-	spectool -d "_topdir ${CURDIR}" -d "_sourcedir ${CURDIR}/SOURCES/$@"  -gR SPECS/$@.spec
-	rpmbuild -D "_topdir ${CURDIR}" -D "_sourcedir ${CURDIR}/SOURCES/$@" --bb SPECS/$@.spec
+all: indiana-jones-atlantis.rpm \
+	 diablo-hellfire.rpm        \
+	 doom.rpm
 
-uzdoom:
-	spectool -d "_topdir ${CURDIR}" -d "_sourcedir ${CURDIR}/SOURCES/$@"  -gR SPECS/$@.spec
-	rpmbuild -D "_topdir ${CURDIR}" -D "_sourcedir ${CURDIR}/SOURCES/$@" --bb SPECS/$@.spec
-
-indiana-jones-atlantis:
-	spectool -d "_topdir ${CURDIR}" -d "_sourcedir ${CURDIR}/SOURCES/$@"  -gR SPECS/$@.spec
-	rpmbuild -D "_topdir ${CURDIR}" -D "_sourcedir ${CURDIR}/SOURCES/$@" --bb SPECS/$@.spec
+%.rpm: SPECS/%.spec
+	spectool ${SPECTOOL_MACROS}  -gR SPECS/$(basename $@).spec
+	rpmbuild ${RPMBUILD_MACROS} --bb SPECS/$(basename $@).spec
 

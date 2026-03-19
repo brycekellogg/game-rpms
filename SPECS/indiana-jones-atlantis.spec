@@ -14,7 +14,7 @@ Source1:        https://cdn2.steamgriddb.com/grid/cec1b4ad140aabc94957c40cb00934
 
 
 %prep
-chmod a+x %{SOURCE0}
+rsync -a %{sourceserver}/%{name}/$(basename %{SOURCE0}) %{SOURCE0}
 %{SOURCE0} -- --i-agree-to-all-licenses --noreadme --nooptions --noprompt --destination %{builddir}
 magick %{SOURCE1} -resize 512x %{builddir}/%{name}.png
 cat <<- EOF > %{builddir}/%{name}.desktop

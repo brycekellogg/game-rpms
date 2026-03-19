@@ -4,10 +4,10 @@ Release:        1%{?dist}
 Summary:        Diablo I + Hellfire using DevilutionX
 License:        SUL-1.0/Proprietary
 Requires:       SDL2
-
+BuildRequires:  rsync innoextract
 Source0:        https://github.com/diasurgical/DevilutionX/releases/download/%{version}/devilutionx-linux-%{_arch}.tar.xz
 Source1:        https://github.com/diasurgical/DevilutionX/releases/download/%{version}/devilutionx-src.tar.xz
-Source2:        "setup_diablo_1.09_hellfire_v4_(78466).exe"
+Source2:        setup_diablo_1.09_hellfire_v4_78466.exe
 
 %description
 DevilutionX is a port of Diablo and Hellfire that strives to make it simple to
@@ -17,6 +17,7 @@ from Diablo I + Hellfire.
 
 
 %prep
+rsync -a %{sourceserver}/%{name}/$(basename %{SOURCE2}) %{SOURCE2}
 mkdir -p %{builddir}/devilutionx-%{version}/
 mkdir -p %{builddir}/diablo-gog/
 tar -xJf %{SOURCE0} -C %{builddir}/devilutionx-%{version}/
