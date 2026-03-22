@@ -6,18 +6,15 @@ License:        Proprietary
 Requires:       scummvm
 BuildRequires:  rsync unzip
 BuildArch:      noarch
-Source0:        indiana_jones_and_the_last_crusade_en_gog_2_20145.sh
-Source1:        indiana_jones_last_crucade_reference_card.zip
-Source2:        indiana_jones_last_crusade_grail_diary.zip
+Source0:        http://%{sourceserver}/games/sources/indiana-jones-last-crusade/indiana_jones_and_the_last_crusade_en_gog_2_20145.sh
+Source1:        http://%{sourceserver}/games/sources/indiana-jones-last-crusade/indiana_jones_last_crucade_reference_card.zip
+Source2:        http://%{sourceserver}/games/sources/indiana-jones-last-crusade/indiana_jones_last_crusade_grail_diary.zip
 
 
 %description
 
 
 %prep
-rsync -a %{sourceserver}/%{name}/$(basename %{SOURCE0}) %{SOURCE0}
-rsync -a %{sourceserver}/%{name}/$(basename %{SOURCE1}) %{SOURCE1}
-rsync -a %{sourceserver}/%{name}/$(basename %{SOURCE2}) %{SOURCE2}
 chmod u+x %{SOURCE0}
 %{SOURCE0} -- --i-agree-to-all-licenses --noreadme --nooptions --noprompt --destination %{builddir}
 cp %{builddir}/support/icon.png %{builddir}/%{name}.png

@@ -6,7 +6,7 @@ License:        Proprietary
 Requires:       scummvm
 BuildRequires:  ImageMagick
 BuildArch:      noarch
-Source0:        indiana_jones_and_the_fate_of_atlantis_en_gog_2_20145.sh
+Source0:        http://%{sourceserver}/games/sources/indiana-jones-atlantis/indiana_jones_and_the_fate_of_atlantis_en_gog_2_20145.sh
 Source1:        https://cdn2.steamgriddb.com/grid/cec1b4ad140aabc94957c40cb00934ec.png
 
 
@@ -14,7 +14,7 @@ Source1:        https://cdn2.steamgriddb.com/grid/cec1b4ad140aabc94957c40cb00934
 
 
 %prep
-rsync -a %{sourceserver}/%{name}/$(basename %{SOURCE0}) %{SOURCE0}
+chmod u+x %{SOURCE0}
 %{SOURCE0} -- --i-agree-to-all-licenses --noreadme --nooptions --noprompt --destination %{builddir}
 magick %{SOURCE1} -resize 512x %{builddir}/%{name}.png
 cat <<- EOF > %{builddir}/%{name}.desktop

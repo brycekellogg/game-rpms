@@ -7,13 +7,12 @@ BuildRequires:  libvpx-devel iwyu cmake ninja-build ImageMagick
 Source0:        https://github.com/UZDoom/UZDoom/archive/refs/tags/%{version}-pre.tar.gz#/uzdoom-%{version}-pre.tar.gz
 Source1:        https://github.com/Owlet7/wadfusion/archive/refs/heads/master.zip#/wadfusion-master.zip
 Source2:        https://doomwiki.org/w/images/8/85/Doom.jpg
-Source3:        setup_doom_plus_doom_ii_2715-adcdb6e-5_64bit_81590.exe
+Source3:        http://%{sourceserver}/games/sources/doom/setup_doom_plus_doom_ii_2715-adcdb6e-5_64bit_81590.exe
 
 %description
 
 
 %prep
-rsync -a %{sourceserver}/%{name}/$(basename %{SOURCE3}) %{SOURCE3}
 tar -xzf %{SOURCE0} -C %{builddir}
 unzip    %{SOURCE1} -d %{builddir}
 mkdir -p %{builddir}/gog-installer/

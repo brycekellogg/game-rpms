@@ -1,6 +1,6 @@
-SPECTOOL_MACROS = -d "_topdir ${CURDIR}"
-RPMBUILD_MACROS = -D "_topdir ${CURDIR}" \
-				  -D "sourceserver ${SOURCE_SERVER}"
+SPECTOOL_MACROS = -d "_topdir ${CURDIR}" \
+				  -d "sourceserver ${SOURCE_SERVER}"
+RPMBUILD_MACROS = -D "_topdir ${CURDIR}"
 
 all: indiana-jones-atlantis.rpm     \
 	 diablo-hellfire.rpm            \
