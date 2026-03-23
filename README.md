@@ -47,6 +47,14 @@ make shivah.rpm
 sudo dnf install ./RPMS/**/shivah-*.rpm
 ```
 
+## Myst
+- [Steam](https://store.steampowered.com/app/63660/Myst_Masterpiece_Edition/)
+- [SPEC](./SPECS/myst.spec)
+```bash
+make myst.rpm
+sudo dnf install ./RPMS/**/myst-*.rpm
+```
+
 # Games to be packaged
 - Sid Meier's Civilization III
 - Sid Meier's Civilization IV

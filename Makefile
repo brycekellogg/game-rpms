@@ -5,7 +5,8 @@ RPMBUILD_MACROS = -D "_topdir ${CURDIR}"
 all: indiana-jones-atlantis.rpm     \
 	 diablo-hellfire.rpm            \
 	 doom.rpm                       \
-	 indiana-jones-last-crusade.rpm
+	 indiana-jones-last-crusade.rpm \
+	 myst.rpm
 
 
 %.rpm: SPECS/%.spec
