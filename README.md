@@ -1,4 +1,3 @@
-
 # Getting Started
 ```bash
 sudo dnf install rpmdevtools chrpath
@@ -53,6 +52,14 @@ sudo dnf install ./RPMS/**/shivah-*.rpm
 ```bash
 make myst.rpm
 sudo dnf install ./RPMS/**/myst-*.rpm
+```
+
+## Zork I/II/III
+- Sources pulled from [The Zork Legacy Collection CD](https://www.mobygames.com/game/12484/the-zork-legacy-collection/)
+- [SPEC](./SPECS/zork.spec)
+```bash
+make zork.rpm
+sudo dnf install ./RPMS/**/zork-*.rpm
 ```
 
 # Games to be packaged
