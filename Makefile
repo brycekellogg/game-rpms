@@ -6,7 +6,8 @@ all: indiana-jones-atlantis.rpm     \
 	 diablo-hellfire.rpm            \
 	 doom.rpm                       \
 	 indiana-jones-last-crusade.rpm \
-	 myst.rpm
+	 myst.rpm                       \
+	 zork.rpm
 
 
 %.rpm: SPECS/%.spec
